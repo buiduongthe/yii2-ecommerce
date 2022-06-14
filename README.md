@@ -171,4 +171,4 @@ Sửa thành (bỏ thẻ /* */)
 ```
 
 <h1>B8.Testing</h1>
-<p>Mở trình duyệt web và thực hiện truy cập website <a href="http://hanhang.com">http://hanhang.com</a></p>
+<p>Mở trình duyệt web và thực hiện truy cập website <a href="http://banhang.com">http://banhang.com</a></p>
