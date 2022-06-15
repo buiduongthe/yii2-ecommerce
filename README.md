@@ -112,7 +112,7 @@ return [
 
 
 <h1>B6. Custom VirtualHost</h1>
-<p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" thêm vào cuối tập tin đoạn mã sau bên dưới và khởi động lại Apache</p>
+<p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" thêm đoạn mã vào cuối tập tin và khởi động lại Apache</p>
 
 ```
 <VirtualHost *:80>
