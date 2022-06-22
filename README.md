@@ -120,7 +120,7 @@ return [
 
 
 <h1>B8. Custom VirtualHost</h1>
-<p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" thêm đoạn mã vào cuối tập tin và khởi động lại Apache</p>
+<p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" bằng phần mềm Notepadd ++ (Chọn Yes nếu hỏi quyền Administrator) thêm đoạn mã vào cuối tập tin và khởi động lại Apache</p>
 
 ```
 <VirtualHost *:80>
@@ -137,8 +137,8 @@ return [
 </VirtualHost>
 ```
 <h1>B9. Config Hosts</h1>
-<p>
-Windows: Vào trong thư mục C:\Windows\Systems32\drivers\etc
+<p>Windows: Vào trong thư mục C:\Windows\Systems32\drivers\etc</p>
+<p>Mở tập tin hosts bằng phần mềm Notepadd ++ (Chọn Yes nếu hỏi quyền Administrator).
 Thêm dòng sau đây vào cuối tập tin "hosts", lưu ý cấp quyền ghi vào tập tin "hosts"
 </p>
 
