@@ -76,14 +76,20 @@ và cài đặt/cấu hình theo hướng dẫn sau:</p>
 ```
 composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
 ```
+<p>Mở phần mềm PppStorm và thực hiện mở thư mục yii-application, mở chế độ dòng lệnh Terminal</p>
 
 ```
 composer update
 ```
-
-<p>Vào thư mục yii-application, mở chế độ dòng lệnh gõ init và enter, sau đó chọn 0 hoặc 1 và nhấn Yes</p>
-
-<h1>B5. Config Database</h1>
+Gõ lệnh php init, chọn môi trường dev hoặc pro, sau đó nhấn Yes nếu muốn ghi đè các tập tin cấu hình
+```
+php init
+```
+<h1>B5. Install Notepad ++ </h1>
+<p>Truy cập vào website <a href="https://notepad-plus-plus.org/downloads/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
+<h1>B6. Install PhpStorm</h1>
+<p>Truy cập vào website <a href="https://www.jetbrains.com/phpstorm/download/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
+<h1>B7. Config Database</h1>
 Truy cập vào thư mục common/config/ mở tập tin main-local.php thực hiện cấu hình tham số cho dbname, username, password
 
 ```
@@ -111,7 +117,7 @@ return [
 ```
 
 
-<h1>B6. Custom VirtualHost</h1>
+<h1>B8. Custom VirtualHost</h1>
 <p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" thêm đoạn mã vào cuối tập tin và khởi động lại Apache</p>
 
 ```
@@ -128,7 +134,7 @@ return [
     CustomLog "logs/admin.banhang.com-access.log" common
 </VirtualHost>
 ```
-<h1>B6. Config Hosts</h1>
+<h1>B9. Config Hosts</h1>
 <p>
 Windows: Vào trong thư mục C:\Windows\Systems32\drivers\etc
 Thêm dòng sau đây vào cuối tập tin "hosts", lưu ý cấp quyền ghi vào tập tin "hosts"
@@ -144,7 +150,7 @@ Thêm dòng sau đây vào cuối tập tin "hosts", lưu ý cấp quyền ghi v
 127.0.0.1 admin.banhang.com
 ```
 
-<h1>B7. Friendly Url</h1>
+<h1>B10. Friendly Url</h1>
 <p>Tạo tập tin .htaccess với nội dung sau:</p>
 
 ```
@@ -179,5 +185,5 @@ Sửa thành (bỏ thẻ /* */)
 
 ```
 
-<h1>B8.Testing</h1>
+<h1>B11.Testing</h1>
 <p>Mở trình duyệt web và thực hiện truy cập website <a target="_blank" href="http://banhang.com">http://banhang.com</a></p>
