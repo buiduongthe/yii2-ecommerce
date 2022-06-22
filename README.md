@@ -88,7 +88,7 @@ php init
 <h1>B5. Install Notepad ++ </h1>
 <p>Truy cập vào website <a href="https://notepad-plus-plus.org/downloads/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
 <h1>B6. Install PhpStorm</h1>
-<p>Truy cập vào website <a href="https://www.jetbrains.com/phpstorm/download/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
+<p>Truy cập vào website <a href="https://www.jetbrains.com/phpstorm/download/">tại đây</a> và tải phần mềm PhpStorm và cài đặt mặc định</p>
 <h1>B7. Config Database</h1>
 Truy cập vào thư mục common/config/ mở tập tin main-local.php thực hiện cấu hình tham số cho dbname, username, password
 
