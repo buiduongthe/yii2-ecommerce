@@ -76,10 +76,12 @@ và cài đặt/cấu hình theo hướng dẫn sau:</p>
 ```
 composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
 ```
-<p>Mở phần mềm PppStorm và thực hiện mở thư mục yii-application, mở chế độ dòng lệnh Terminal</p>
+<p>Mở phần mềm PppStorm và thực hiện mở thư mục yii-application, mở chế độ dòng lệnh Terminal và thực thi một trong các lệnh sau:</p>
 
 ```
 composer update
+composer install --ignore-platform-reqs
+composer update --ignore-platform-reqs
 ```
 Gõ lệnh php init, chọn môi trường dev hoặc pro, sau đó nhấn Yes nếu muốn ghi đè các tập tin cấu hình
 ```
