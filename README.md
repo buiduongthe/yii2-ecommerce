@@ -188,4 +188,4 @@ Sửa thành (bỏ thẻ /* */)
 ```
 
 <h1>B11.Testing</h1>
-<p>Mở trình duyệt web và thực hiện truy cập website <a target="_blank" href="http://banhang.com">http://banhang.com</a></p>
+<p>Mở trình duyệt web và thực hiện truy cập website <a target="_blank" href="http://banhang.com">http://banhang.com</a> và <a target="_blank" href="http://admin.banhang.com">http://admin.banhang.com</a></p>
