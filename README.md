@@ -89,6 +89,8 @@ php init
 <p>Truy cập vào website <a href="https://notepad-plus-plus.org/downloads/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
 <h1>B6. Install PhpStorm</h1>
 <p>Truy cập vào website <a href="https://www.jetbrains.com/phpstorm/download/">tại đây</a> và tải phần mềm PhpStorm và cài đặt mặc định</p>
+<p>Mở phần mềm PhpStorm, đăng ký bản quyền, mở Project</p>
+<p>Vào menu File -> Settings -> Plugins tìm với từ khóa Yii và cài đặt các tiện ích (Yii2 Support,Yii2 Inspection, Yii::t, Yii2-Url)</p>
 <h1>B7. Config Database</h1>
 Truy cập vào thư mục common/config/ mở tập tin main-local.php thực hiện cấu hình tham số cho dbname, username, password
 
