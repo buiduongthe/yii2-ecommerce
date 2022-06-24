@@ -9,7 +9,10 @@ $params = array_merge(
 
 return [
     'id' => 'app-console',
+    'timeZone' => 'Asia/Ho_Chi_Minh',
     'basePath' => dirname(__DIR__),
+    'sourceLanguage' => 'en-US',
+    'language' => 'vi',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [

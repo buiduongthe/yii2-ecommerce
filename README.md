@@ -58,6 +58,7 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
 <h1>B1. Install Xampp</h1>
 <p>Truy cập vào trang chủ Xampp tại <a target="_blank" href="https://www.apachefriends.org/download.html">Xampp Download</a>
 và cài đặt/cấu hình theo hướng dẫn sau:</p>
@@ -76,6 +77,7 @@ và cài đặt/cấu hình theo hướng dẫn sau:</p>
 ```
 composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
 ```
+
 <p>Mở phần mềm PppStorm và thực hiện mở thư mục yii-application, mở chế độ dòng lệnh Terminal và thực thi một trong các lệnh sau:</p>
 
 ```
@@ -83,10 +85,13 @@ composer update
 composer install --ignore-platform-reqs
 composer update --ignore-platform-reqs
 ```
+
 Gõ lệnh php init, chọn môi trường dev hoặc pro, sau đó nhấn Yes nếu muốn ghi đè các tập tin cấu hình
+
 ```
 php init
 ```
+
 <h1>B5. Install Notepad ++ </h1>
 <p>Truy cập vào website <a href="https://notepad-plus-plus.org/downloads/">tại đây</a> và tải phần mềm Notepadd ++ và cài đặt mặc định</p>
 <h1>B6. Install PhpStorm</h1>
@@ -103,9 +108,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=banhang',
+            'dsn' => 'mysql:host=localhost;dbname=e-commerce',
             'username' => 'root',
-            'password' => '123456',
+            'password' => '',
             'charset' => 'utf8',
         ],
         'mailer' => [
@@ -119,7 +124,7 @@ return [
     ],
 ];
 ```
-
+<p>Import DB db/e-commerce.sql</p>
 
 <h1>B8. Custom VirtualHost</h1>
 <p>Truy cập vào thư mục "E:\xampp\apache\conf\extra" mở tập tin "httpd-vhosts.conf" bằng phần mềm Notepadd ++ (Chọn Yes nếu hỏi quyền Administrator) thêm đoạn mã vào cuối tập tin và khởi động lại Apache</p>
@@ -138,6 +143,7 @@ return [
     CustomLog "logs/admin.banhang.com-access.log" common
 </VirtualHost>
 ```
+
 <h1>B9. Config Hosts</h1>
 <p>Windows: Vào trong thư mục C:\Windows\Systems32\drivers\etc</p>
 <p>Mở tập tin hosts bằng phần mềm Notepadd ++ (Chọn Yes nếu hỏi quyền Administrator).
@@ -163,10 +169,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
 ```
+
 <p>Chép tập tin .htaccess vào 2 thư mục frontend/web và backend/web </p>
 Truy cập vào backend/config hoặc frontend/config, tùy chỉnh tập tin main.php
 
 Tìm đoạn mã sau
+
 ```
 /*
 'urlManager' => [
@@ -177,6 +185,7 @@ Tìm đoạn mã sau
 ],
 /*
 ```
+
 Sửa thành (bỏ thẻ /* */)
 
 ```
@@ -190,4 +199,11 @@ Sửa thành (bỏ thẻ /* */)
 ```
 
 <h1>B11.Testing</h1>
-<p>Mở trình duyệt web và thực hiện truy cập website <a target="_blank" href="http://banhang.com">http://banhang.com</a> và <a target="_blank" href="http://admin.banhang.com">http://admin.banhang.com</a></p>
+<p>Frontend: <a target="_blank" href="http://banhang.com">http://banhang.com</a><p>
+<p>Backend: <a target="_blank" href="http://admin.banhang.com">http://admin.banhang.com</a></p>
+
+```
+username: admin
+password:999999
+
+```

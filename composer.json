@@ -21,7 +21,6 @@
         "ext-PDO": "*",
         "ext-intl": "*",
         "ext-iconv": "*",
-        "ext-gd": "*",
         "yiisoft/yii2": "2.0.44",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "hail812/yii2-adminlte3": "v1.1.3",

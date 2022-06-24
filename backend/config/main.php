@@ -8,7 +8,10 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'timeZone' => 'Asia/Ho_Chi_Minh',
     'basePath' => dirname(__DIR__),
+    'sourceLanguage' => 'en-US',
+    'language' => 'vi',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
@@ -30,7 +33,7 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning','info'],
                 ],
             ],
         ],
