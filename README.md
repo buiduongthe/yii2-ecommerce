@@ -203,7 +203,7 @@ Sửa thành (bỏ thẻ /* */)
 <p>Backend: <a target="_blank" href="http://admin.banhang.com">http://admin.banhang.com</a></p>
 
 ```
-username: admin
+username:admin
 password:999999
 
 ```
