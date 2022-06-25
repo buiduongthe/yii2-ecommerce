@@ -58,7 +58,14 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+<b>Đây là dự án dùng để học tập và tham khảo, không vì mục đích thương mại</b>
+<p>Trân trọng cảm ơn các tác giả của các Theme, thư viện đã được sử dụng trong mã nguồn này</p>
+<p>Dụ án có sử dụng các Themes, Thư viện ... được liệt kê sau đây:</p>
 
+<p>- Theme Frontend: <a href="https://themeforest.net/item/nest-multipurpose-ecommerce-html-template/33948410">Nest - Multipurpose eCommerce HTML Template
+</a></p> 
+<p>- Theme Backend: <a href="https://adminlte.io/themes/v3/">AdminLte 3</a></p>
+<p>- ...</p>
 <h1>B1. Install Xampp</h1>
 <p>Truy cập vào trang chủ Xampp tại <a target="_blank" href="https://www.apachefriends.org/download.html">Xampp Download</a>
 và cài đặt/cấu hình theo hướng dẫn sau:</p>
