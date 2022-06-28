@@ -23,6 +23,31 @@ class Constant
     const IMAGE_MEDIUM = 'MEDIUM';
     const IMAGE_LARGE = 'LARGE';
     const IMAGE_ORIGIN = 'ORIGIN';
+    const STATUS_DEFAULT_ACTIVE = 'ACTIVE';
+    const STATUS_DEFAULT_INACTIVE = 'INACTIVE';
+
+    #[ArrayShape([self::STATUS_DEFAULT_ACTIVE => "string", self::STATUS_DEFAULT_INACTIVE => "string"])]
+    public static function DefaultStatus(): array
+    {
+        return [
+            Constant::STATUS_DEFAULT_ACTIVE => Yii::t('app','Active'),
+            Constant::STATUS_DEFAULT_INACTIVE => Yii::t('app','Inactive'),
+        ];
+    }
+
+    #[ArrayShape([self::STATUS_DEFAULT_ACTIVE => "string", self::STATUS_DEFAULT_INACTIVE => "string"])]
+    public static function DefaultAvailability(): array
+    {
+        return [
+            Constant::STATUS_DEFAULT_ACTIVE => Yii::t('app','Active'),
+            Constant::STATUS_DEFAULT_INACTIVE => Yii::t('app','Inactive'),
+        ];
+    }
+
+    public static function MarkFeatured($string): string
+    {
+        return $string." <i class='far fa-star' style='color:yellow;font-weight: bold'></i>";
+    }
 
     public static function DistanceBetweenPoints($lat1, $lon1, $lat2, $lon2, $unit): float|int
     {

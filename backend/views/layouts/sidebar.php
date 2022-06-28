@@ -42,7 +42,7 @@
                         'badge' => '<span class="right badge badge-info">2</span>',
                         'items' => [
                             ['label' => Yii::t('app', 'Home Page'), 'url' => ['site/index'], 'iconStyle' => 'far'],
-                            ['label' => Yii::t('app', 'Categories'), 'url' => ['/categories'], 'iconStyle' => 'far'],
+                            ['label' => Yii::t('app', 'Categories'), 'url' => ['/category/index'], 'iconStyle' => 'far'],
                             ['label' => Yii::t('app', 'Products'), 'url' => ['/products'], 'iconStyle' => 'far'],
                         ]
                     ],

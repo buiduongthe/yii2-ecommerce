@@ -1,14 +1,31 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use yii\helpers\Html;
-
+\backend\assets\AppAsset::register($this);
 \hail812\adminlte3\assets\FontAwesomeAsset::register($this);
 \hail812\adminlte3\assets\AdminLteAsset::register($this);
+\hail812\adminlte3\assets\PluginAsset::register($this)->add([
+    'jquery-ui',
+    'sweetalert2',
+    'toastr',
+    'fontawesome',
+    'icheck-bootstrap',
+    'chart',
+    'pace-progress'
+//    'sparklines',
+//    'jqvmap',
+//    'jquery-knob',
+//    'moment',
+//    'daterangepicker',
+//    'tempusdominus-bootstrap-4',
+//    'summernote',
+//    'overlayScrollbars',
+]);
 $this->registerCssFile('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback');
-
 $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
 ?>
 <?php $this->beginPage() ?>
