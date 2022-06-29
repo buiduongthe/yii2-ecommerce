@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'value' => Constant::getTextFromArray(Constant::DefaultStatus(), $model->availability),
                 ],
                 [
-                    'attribute' => 'created_by',
+                    'attribute' => 'owner_id',
                     'value' => ($model->owner) ? $model->owner->full_name : "",
                 ],
                 [
@@ -50,7 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'attribute' => 'updated_at',
                     'value' => Constant::FormatDateTime($model->updated_at),
-                    'contentOptions' => ['id' => 'html_updated_at'],
                 ],
             ],
         ]) ?>

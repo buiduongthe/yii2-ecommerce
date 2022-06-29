@@ -86,7 +86,7 @@ class Badge extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[UpdateBy]].
+     * Gets query for [[UpdatedBy]].
      *
      * @return ActiveQuery
      */

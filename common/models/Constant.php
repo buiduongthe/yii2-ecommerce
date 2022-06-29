@@ -248,7 +248,7 @@ class Constant
         }
     }
 
-    public static function StringgReplace($str)
+    public static function StringReplace($str)
     {
         $unicode = array(
             'a' => 'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',

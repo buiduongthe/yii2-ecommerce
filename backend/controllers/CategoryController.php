@@ -78,7 +78,7 @@ class CategoryController extends Controller
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->code = Constant::StringgReplace($model->name);
+            $model->code = Constant::StringReplace($model->name);
             if($model->save()){
                 return $this->redirect(['view', 'id' => $model->id]);
             }
