@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "badge".
@@ -17,6 +18,9 @@ use Yii;
  * @property int|null $created_by
  * @property int|null $updated_by
  * @property int|null $created_at
+ * @property-read User $createdBy
+ * @property-read User $updatedBy
+ * @property-read User $owner
  * @property int|null $updated_at
  */
 class Badge extends \yii\db\ActiveRecord
@@ -61,4 +65,34 @@ class Badge extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
+    /**
+     * Gets query for [[Owner]].
+     *
+     * @return ActiveQuery
+     */
+    public function getOwner(): ActiveQuery
+    {
+        return $this->hasOne(User::className(), ['id' => 'owner_id']);
+    }
+
+    /**
+     * Gets query for [[CreatedBy]].
+     *
+     * @return ActiveQuery
+     */
+    public function getCreatedBy(): ActiveQuery
+    {
+        return $this->hasOne(User::className(), ['id' => 'owner_id']);
+    }
+
+    /**
+     * Gets query for [[UpdateBy]].
+     *
+     * @return ActiveQuery
+     */
+    public function getUpdatedBy(): ActiveQuery
+    {
+        return $this->hasOne(User::className(), ['id' => 'owner_id']);
+    }
+
 }

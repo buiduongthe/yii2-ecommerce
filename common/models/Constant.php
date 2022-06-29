@@ -273,6 +273,4 @@ class Constant
         }
         return str_replace(' ', '_', $str);
     }
-
-
 }

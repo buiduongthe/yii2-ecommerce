@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Constant;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -22,13 +23,35 @@ $this->params['breadcrumbs'][] = $this->title;
                 'name',
                 'color',
                 'class',
-                'status',
-                'availability',
-                'owner_id',
-                'created_by',
-                'updated_by',
-                'created_at',
-                'updated_at',
+                [
+                    'attribute' => 'status',
+                    'value' => Constant::getTextFromArray(Constant::DefaultStatus(), $model->status),
+                ],
+                [
+                    'attribute' => 'availability',
+                    'value' => Constant::getTextFromArray(Constant::DefaultStatus(), $model->availability),
+                ],
+                [
+                    'attribute' => 'created_by',
+                    'value' => ($model->owner) ? $model->owner->full_name : "",
+                ],
+                [
+                    'attribute' => 'created_by',
+                    'value' => ($model->createdBy) ? $model->createdBy->full_name : "",
+                ],
+                [
+                    'attribute' => 'updated_by',
+                    'value' => ($model->updatedBy) ? $model->updatedBy->full_name : "",
+                ],
+                [
+                    'attribute' => 'created_at',
+                    'value' => Constant::FormatDateTime($model->created_at),
+                ],
+                [
+                    'attribute' => 'updated_at',
+                    'value' => Constant::FormatDateTime($model->updated_at),
+                    'contentOptions' => ['id' => 'html_updated_at'],
+                ],
             ],
         ]) ?>
     </div>
