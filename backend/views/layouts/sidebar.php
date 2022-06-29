@@ -52,11 +52,14 @@
                     ['label' => 'Gii', 'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],
                     ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
                     ['label' => 'MULTI LEVEL EXAMPLE', 'header' => true],
-                    ['label' => 'Level1'],
                     [
-                        'label' => 'Level1',
+                        'label' => Yii::t('app', 'Systems'),
                         'items' => [
-                            ['label' => 'Level2', 'iconStyle' => 'far'],
+                            [
+                                'label' => Yii::t('app', 'Badge'),
+                                'iconStyle' => 'far',
+                                'url' => ['/badge'],
+                            ],
                             [
                                 'label' => 'Level2',
                                 'iconStyle' => 'far',
