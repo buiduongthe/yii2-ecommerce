@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
+use common\models\Constant;
 use Yii;
 use backend\models\Category;
 use backend\models\search\CategorySearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -17,13 +19,22 @@ class CategoryController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+
                 ],
             ],
         ];
@@ -46,7 +57,7 @@ class CategoryController extends Controller
 
     /**
      * Displays a single Category model.
-     * @param int $if If
+     * @param int $id Id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -66,8 +77,11 @@ class CategoryController extends Controller
     {
         $model = new Category();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->code = Constant::StringgReplace($model->name);
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('create', [
@@ -112,7 +126,7 @@ class CategoryController extends Controller
     /**
      * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $if If
+     * @param int $id Id
      * @return Category the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

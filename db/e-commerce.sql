@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2022 at 05:51 PM
+-- Generation Time: Jun 29, 2022 at 03:40 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -90,6 +90,38 @@ CREATE TABLE `auth_rule` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `badge`
+--
+
+CREATE TABLE `badge` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `color` varchar(20) NOT NULL,
+  `class` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'ACTIVE',
+  `availability` varchar(20) NOT NULL DEFAULT 'ACTIVE',
+  `owner_id` bigint(20) DEFAULT NULL,
+  `created_by` bigint(20) DEFAULT NULL,
+  `updated_by` bigint(20) DEFAULT NULL,
+  `created_at` bigint(20) DEFAULT NULL,
+  `updated_at` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `badge`
+--
+
+INSERT INTO `badge` (`id`, `name`, `color`, `class`, `status`, `availability`, `owner_id`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, 'Hot', '#f74b81', 'hot', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL),
+(2, 'New', '#3BB77E', 'new', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL),
+(3, 'Sale', '#67bcee', 'sale', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL),
+(4, 'Save', '#3BB77E', 'new', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL),
+(5, 'Best Sale', '#f59758', 'best', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL),
+(6, 'Best', '#f59758', 'best', 'ACTIVE', 'ACTIVE', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
@@ -162,9 +194,9 @@ CREATE TABLE `product` (
   `sale_price` bigint(20) NOT NULL,
   `amount` int(11) NOT NULL DEFAULT 1,
   `is_featured` tinyint(4) NOT NULL DEFAULT 0,
-  `is_hot` int(11) NOT NULL,
-  `is_new` int(11) NOT NULL,
-  `is_sale` int(11) NOT NULL,
+  `is_badge` int(11) DEFAULT NULL,
+  `front_image_url` varchar(255) NOT NULL,
+  `back_image_url` varchar(255) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'ACTIVE',
   `availability` varchar(20) NOT NULL DEFAULT 'ACTIVE',
   `owner_id` bigint(20) NOT NULL,
@@ -173,6 +205,32 @@ CREATE TABLE `product` (
   `created_at` bigint(20) NOT NULL,
   `updated_ar` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `category_id`, `sku`, `code`, `name`, `briefly`, `description`, `origin_price`, `sale_price`, `amount`, `is_featured`, `is_badge`, `front_image_url`, `back_image_url`, `status`, `availability`, `owner_id`, `created_by`, `updated_by`, `created_at`, `updated_ar`) VALUES
+(1, 1, NULL, '', 'Seeds of Change Organic Quinoa, Brown, & Red Rice', '', '', 10, 5, 1, 0, 1, '/imgs/shop/product-1-1.jpg', '/imgs/shop/product-1-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(2, 1, NULL, '', 'All Natural Italian-Style Chicken Meatballs', '', '', 11, 8, 1, 0, 2, '/imgs/shop/product-2-1.jpg', '/imgs/shop/product-2-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(4, 1, NULL, '', 'Angie’s Boomchickapop Sweet & Salty Kettle Corn', '', '', 12, 7, 1, 0, 3, '/imgs/shop/product-3-1.jpg', '/imgs/shop/product-3-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(5, 1, NULL, '', 'Foster Farms Takeout Crispy Classic Buffalo Wings', '', '', 13, 6, 1, 0, 4, '/imgs/shop/product-4-1.jpg', '/imgs/shop/product-4-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(6, 1, NULL, '', 'Blue Diamond Almonds Lightly Salted Vegetables', '', '', 14, 5, 1, 0, 5, '/imgs/shop/product-5-1.jpg', '/imgs/shop/product-5-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(7, 1, NULL, '', 'Chobani Complete Vanilla Greek Yogurt', '', '', 15, 9, 1, 0, 6, '/imgs/shop/product-6-1.jpg', '/imgs/shop/product-6-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(8, 1, NULL, '', 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g', '', '', 16, 8, 1, 0, 1, '/imgs/shop/product-7-1.jpg', '/imgs/shop/product-7-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(9, 1, NULL, '', 'Encore Seafoods Stuffed Alaskan Salmon', '', '', 17, 7, 1, 0, 2, '/imgs/shop/product-8-1.jpg', '/imgs/shop/product-8-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(11, 1, NULL, '', 'Gorton’s Beer Battered Fish Fillets with soft paper', '', '', 18, 6, 1, 0, 3, '/imgs/shop/product-9-1.jpg', '/imgs/shop/product-9-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(12, 1, NULL, '', 'Haagen-Dazs Caramel Cone Ice Cream Ketchup', '', '', 19, 5, 1, 0, 4, '/imgs/shop/product-10-1.jpg', '/imgs/shop/product-10-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(13, 2, NULL, '', 'Seeds of Change Organic Quinoa, Brown, & Red Rice', '', '', 10, 9, 1, 0, 5, '/imgs/shop/product-11-1.jpg', '/imgs/shop/product-11-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(14, 2, NULL, '', 'All Natural Italian-Style Chicken Meatballs', '', '', 11, 8, 1, 0, 6, '/imgs/shop/product-12-1.jpg', '/imgs/shop/product-12-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(15, 2, NULL, '', 'Angie’s Boomchickapop Sweet & Salty Kettle Corn', '', '', 12, 7, 1, 0, 1, '/imgs/shop/product-13-1.jpg', '/imgs/shop/product-13-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(16, 2, NULL, '', 'Foster Farms Takeout Crispy Classic Buffalo Wings', '', '', 13, 6, 1, 0, 2, '/imgs/shop/product-14-1.jpg', '/imgs/shop/product-14-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(17, 2, NULL, '', 'Blue Diamond Almonds Lightly Salted Vegetables', '', '', 14, 5, 1, 0, 3, '/imgs/shop/product-15-1.jpg', '/imgs/shop/product-15-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(18, 2, NULL, '', 'Chobani Complete Vanilla Greek Yogurt', '', '', 15, 9, 1, 0, 4, '/imgs/shop/product-16-1.jpg', '/imgs/shop/product-16-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(19, 2, NULL, '', 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g', '', '', 16, 8, 1, 0, 5, '/imgs/shop/product-1-1.jpg', '/imgs/shop/product-1-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(20, 2, NULL, '', 'Encore Seafoods Stuffed Alaskan Salmon', '', '', 17, 7, 1, 0, 6, '/imgs/shop/product-2-1.jpg', '/imgs/shop/product-2-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(21, 2, NULL, '', 'Gorton’s Beer Battered Fish Fillets with soft paper', '', '', 18, 6, 1, 0, 1, '/imgs/shop/product-3-1.jpg', '/imgs/shop/product-3-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0),
+(22, 2, NULL, '', 'Haagen-Dazs Caramel Cone Ice Cream Ketchup', '', '', 19, 5, 1, 0, 2, '/imgs/shop/product-4-1.jpg', '/imgs/shop/product-4-2.jpg', 'ACTIVE', 'ACTIVE', 1, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -186,6 +244,7 @@ CREATE TABLE `user` (
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `full_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint(6) NOT NULL DEFAULT 10,
   `created_at` bigint(20) NOT NULL,
@@ -197,8 +256,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `verification_token`) VALUES
-(1, 'admin', 'Wn9oWgRc0Ah64fD92lxq7dAZAgFpsm4J', '$2y$13$9DQwTwyO4whmEe.PLxDQMOaY8n3bVw.Nj51CsYvRtS..0PSJ0WQaa', NULL, '', 10, 0, 1656049353, NULL);
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `full_name`, `email`, `status`, `created_at`, `updated_at`, `verification_token`) VALUES
+(1, 'admin', 'Wn9oWgRc0Ah64fD92lxq7dAZAgFpsm4J', '$2y$13$9DQwTwyO4whmEe.PLxDQMOaY8n3bVw.Nj51CsYvRtS..0PSJ0WQaa', NULL, 'Bùi Thế', '', 10, 0, 1656049353, NULL);
 
 --
 -- Indexes for dumped tables
@@ -233,6 +292,12 @@ ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
+-- Indexes for table `badge`
+--
+ALTER TABLE `badge`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -265,6 +330,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `badge`
+--
+ALTER TABLE `badge`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
@@ -274,7 +345,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user`

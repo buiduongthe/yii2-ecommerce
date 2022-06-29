@@ -70,10 +70,10 @@ class Category extends \common\models\Category
 //                return $model->parent_id > 0;
 //            },],
             [['code', 'name'], 'required'],
-            [['code','name'], 'string', 'max' => 50],
+            [['code', 'name'], 'string', 'max' => 50],
+            [['code'], 'match', 'pattern' => '/^[a-z]+$/', 'message' => 'Invalid characters in code.'],
             [['parent_id'], 'default', 'value' => 0],
-            //[['status', 'availability'], 'string', 'max' => 20],
-            [['status', 'availability'], 'boolean', 'falseValue' => Constant::STATUS_DEFAULT_INACTIVE, 'trueValue' => Constant::STATUS_DEFAULT_ACTIVE],
+            [['status', 'availability'], 'string', 'max' => 20],
             [['status', 'availability'], 'in', 'range' => [Constant::STATUS_DEFAULT_ACTIVE, Constant::STATUS_DEFAULT_INACTIVE]],
         ];
     }
